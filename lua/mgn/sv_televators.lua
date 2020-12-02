@@ -8,25 +8,41 @@ local telearea1 = nil
 local telearea2 = nil
 
 if LMVector ~= nil then
-	local version = string.match(game.GetMap(), "^gm_construct_m3_(%d+)$")
-	if version ~= nil and tonumber(version) >= 195 then
-		doorloc = LMVector(1496, -2, -163, "Smooth", true)
+	local mapversion = tonumber(string.match(game.GetMap(), "^gm_construct_m3_(%d+)$")) or -1
+
+	if mapversion >= 225 then
+		local loc  = LMVector(0, -1312, -159.5, "Smooth", true) --this is the base pos/center of the room
+		roomcenter = loc
 		doorradius = 100
-		roomcenter = LMVector(1314, 12, -119, "Smooth", true)
-		telearea1 = LMVector(1149, -97, -207, "Smooth", true)
-		telearea2 = LMVector(1475, 93, -207, "Smooth", true)
+		doorloc   = loc:pos() + Vector(32, -236, -63.5)
+		telearea1 = loc:pos() + Vector(-165, -109, -88)
+		telearea2 = loc:pos() + Vector(140, 81, -88)
+		mgn.SafeLocation = loc
+		mgn.SafeBounds = Vector(280, 280, 120)
+	elseif mapversion >= 195 then
+		local loc  = LMVector(1314, 12, -130, "Smooth", true)
+		roomcenter = loc
+		doorradius = 100
+		doorloc   = loc:pos() + Vector(-182, 14, 44)
+		telearea1 = loc:pos() + Vector(-161, -81, -88)
+		telearea2 = loc:pos() + Vector(165, 109, -88)
+		mgn.SafeLocation = loc
+		mgn.SafeBounds = Vector(280, 280, 150)
 	else
-		doorloc = LMVector(-2091, 4912, -70, "land_caves", true)
+		local loc  = LMVector(-2083, 5142, -21, "land_caves", true)
+		roomcenter = loc
 		doorradius = 100
-		roomcenter = LMVector(-2083, 5142, -21, "land_caves", true)
-		telearea1 = LMVector(-1886, 4962, -174, "land_caves", true)
-		telearea2 = LMVector(-2289, 5281, -174, "land_caves", true)
+		doorloc   = loc:pos() + Vector(8, 230, 49)
+		telearea1 = loc:pos() + Vector(-197, -180, -153)
+		telearea2 = loc:pos() + Vector(206, 139, -153)
+		mgn.SafeLocation = loc
+		mgn.SafeBounds = Vector(400, 400, 200)
 	end
 end
 
 local PLAYER = FindMetaTable("Player")
 
-if doorloc == nil or roomcenter == nil or telearea1 == nil or telearea2 == nil or not roomcenter:inworld() then
+if not roomcenter:inworld() then
 	function mgn.SetEmergencyTelevationMode()
 	end
 
@@ -35,8 +51,6 @@ if doorloc == nil or roomcenter == nil or telearea1 == nil or telearea2 == nil o
 
 	print("[MGN] Unable to find emergency televation destination!")
 	return
-else
-	doorloc, telearea1, telearea2 = doorloc:pos(), telearea1:pos(), telearea2:pos()
 end
 
 local function GetDoor()
