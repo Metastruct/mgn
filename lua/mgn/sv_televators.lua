@@ -42,7 +42,7 @@ end
 
 local PLAYER = FindMetaTable("Player")
 
-if not roomcenter:inworld() then
+if roomcenter == nil or not roomcenter:inworld() then
 	function mgn.SetEmergencyTelevationMode()
 	end
 
