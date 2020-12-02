@@ -41,20 +41,19 @@ local function PlayerDeathSound(ply)
 	return true
 end
 
-local safeAA = LMVector ~= nil and LMVector(-1424, -2546, 746, "Smooth", true)
-safeAA = safeAA ~= nil and safeAA:ToWorld() or Vector(6710, 6957, -15535)
-
-local safeBB = LMVector ~= nil and LMVector(1548, 2577, -836, "Smooth", true)
-safeBB = safeBB ~= nil and safeBB:ToWorld() or Vector(10961, 4307, -14529)
-
 local function IsInSafeRoom(ply)
 	local pos = ply:GetPos()
 	if ply.msasafe then
 		return true
 	end
 
-	return VectorWithinBox(pos, safeAA, safeBB)
+	if mgn.SafeLocation ~= nil then
+		local safe = mgn.SafeLocation:pos()
+		local bounds = mgn.SafeBounds
+		local mins, maxs = safe + bounds, safe - bounds
 
+		return VectorWithinBox(pos, mins, maxs)
+	end
 end
 
 mgn.Stage.Exploding = {
