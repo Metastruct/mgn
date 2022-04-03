@@ -23,17 +23,17 @@ local function AddAlarmLocation(data)
 end
 
 -- Lobby
-AddAlarmLocation({Position = LMVector(-606, 114, 258, "lobby_3", true), Normal = Vector (1, 0, 0)})
+AddAlarmLocation({Position = LMVector(-620, 10, 160, "lobby_3", true), Normal = Vector (1, 0, 0)})
 AddAlarmLocation({Position = LMVector(1172, -76, 106, "lobby_3", true), Normal = Vector (0, -1, 0)})
-AddAlarmLocation({Position = LMVector(-267, 545, 883, "AutoInstance0sauna", true), Normal = Vector (0, 1, 0)})
-AddAlarmLocation({Position = LMVector(-268, 730, 352, "bookstore", true), Normal = Vector (1, 0, 0)})
-AddAlarmLocation({Position = LMVector(363, -136, 151, "shops", true), Normal = Vector (0, -1, 0)})
+AddAlarmLocation({Position = LMVector(-190, 570, 840, "AutoInstance0sauna", true), Normal = Vector (0, 1, 0)})
+AddAlarmLocation({Position = LMVector(245, 715, 130, "bookstore", true), Normal = Vector (0.943, 0.33, -0)})
+AddAlarmLocation({Position = LMVector(595, -135, 290, "shops", true), Normal = Vector (0, -1, 0)})
 AddAlarmLocation({Position = LMVector(-316, -565, 163, "bookstore", true), Normal = Vector (1, 0, 0)})
 AddAlarmLocation({Position = LMVector(-282, 870, -61, "bookstore", true), Normal = Vector (-0.73, 0.68, 0)})
 AddAlarmLocation({Position = LMVector(884, -28, -195, "bookstore", true), Normal = Vector (1, 0, 0)})
-AddAlarmLocation({Position = LMVector(-852, -568, -25, "cinm", true), Normal = Vector (-1, 0, 0)})
+AddAlarmLocation({Position = LMVector(-1200, -1172, 175, "cinm", true), Normal = Vector (0, 1, 0)})
 AddAlarmLocation({Position = LMVector(218, 712, 70, "hole", true), Normal = Vector (0, 1, 0)})
-AddAlarmLocation({Position = LMVector(325, 252, -349, "shops", true), Normal = Vector (0, -1, 0)})
+AddAlarmLocation({Position = LMVector(252, 760, -140, "shops", true), Normal = Vector (0, -1, 0)})
 AddAlarmLocation({Position = LMVector(-760, 132, 75, "dond_entrance", true), Normal = Vector (0, -1, 0)})
 AddAlarmLocation({Position = LMVector(-184, -99, 168, "cre", true), Normal = Vector (1, 0, 0)})
 
@@ -41,8 +41,8 @@ AddAlarmLocation({Position = LMVector(-184, -99, 168, "cre", true), Normal = Vec
 AddAlarmLocation({Position = LMVector(1139, 845, -41, "land_rp", true), Normal = Vector(0, -1, 0)})
 
 -- Fishing
-AddAlarmLocation({Position = LMVector(-228, -1566, 75, "land_fish1", true), Normal = Vector(0, -1, 0)})
-AddAlarmLocation({Position = LMVector(-77, -296, 205, "land_fish2", true), Normal = Vector(0, 1, 0)})
+AddAlarmLocation({Position = LMVector(765, 820, 60, "land_fish2", true), Normal = Vector(1, 0, 0)})
+AddAlarmLocation({Position = LMVector(-288, -117, 60, "land_fish2", true), Normal = Vector(1, 0, 0)})
 
 -- Soccer
 AddAlarmLocation({Position = LMVector(-33, 174, 120, "soccer", true), Normal = Vector(0, -1, 0)})

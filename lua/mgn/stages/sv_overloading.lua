@@ -29,7 +29,14 @@ mgn.Stage.Overloading = {
 
 		for i = 1, #mgn.AlarmEntities do
 			local pair = mgn.AlarmEntities[i]
-			pair.Light:SetEnabled(true)
+			local light = pair.Light
+
+			if not IsValid(light) then
+				print("[MGN] Light Entity " .. tostring(i) .. " missing!")
+				continue
+			end
+
+			light:SetEnabled(true)
 			-- pair.Siren:SetEnabled(true) handled by mgn_alarms_enabled
 		end
 
@@ -65,7 +72,14 @@ mgn.Stage.Overloading = {
 
 		for i = 1, #mgn.AlarmEntities do
 			local pair = mgn.AlarmEntities[i]
-			pair.Light:SetEnabled(false)
+			local light = pair.Light
+
+			if not IsValid(light) then
+				print("[MGN] Light Entity " .. tostring(i) .. " missing!")
+				continue
+			end
+
+			light:SetEnabled(false)
 
 			-- handled by mgn_alarms_enabled
 			-- pair.Siren:SetEnabled(false)
