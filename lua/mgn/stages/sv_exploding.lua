@@ -139,5 +139,7 @@ mgn.Stage.Exploding = {
 		if IsValid(mgn.ControlComputer) then
 			mgn.ControlComputer:SetOverloadStart(0)
 		end
+	
+		hook.Run("MGNCoreExploded")
 	end
 }
