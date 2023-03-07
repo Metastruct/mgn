@@ -8,8 +8,9 @@ local telearea1 = nil
 local telearea2 = nil
 
 if LMVector ~= nil then
-	local mapversion = tonumber(string.match(game.GetMap(), "^gm_construct_m3_(%d+)$")) or -1
-
+	local mapversion = tonumber(game.GetMap():match("^gm_construct_m3_(%d+)$")) or -1
+	if not mapversion then return end
+	
 	if mapversion >= 225 then
 		local loc  = LMVector(0, -1312, -159.5, "Smooth", true) --this is the base pos/center of the room
 		roomcenter = loc
