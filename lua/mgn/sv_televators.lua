@@ -31,6 +31,7 @@ if LMVector ~= nil then
 		mgn.SafeBounds = Vector(280, 280, 150)
 	else
 		local loc  = LMVector(-2083, 5142, -21, "land_caves", true)
+		if not loc then return end
 		roomcenter = loc
 		doorradius = 100
 		doorloc   = loc:pos() + Vector(8, 230, 49)
