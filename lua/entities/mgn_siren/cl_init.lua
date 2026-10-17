@@ -23,8 +23,8 @@ function ENT:OnRemove()
 	end
 end
 
-function ENT:Draw()
-	self:DrawModel()
+function ENT:Draw(flags)
+	self:DrawModel(flags)
 end
 
 net.Receive("mgn_siren", function()
